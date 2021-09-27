@@ -1,0 +1,13 @@
+1. 
+No, I wug.
+You wugga wug.
+I wug.
+
+2. 
+(Since I cannot upload my physical notes, I will describe the way my state diagram looks)
+There are 4 methods named main, zoop, baffle, and ping. Each method will have an empty box to the right of them
+since there are no parameters. 
+
+3.
+If you invoke baffle(); at the end of the ping method, it will bring you back to the baffle method, in which it
+will print out "wug" and then invoke ping -- beginning a cycle.
