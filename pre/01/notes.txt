@@ -1,4 +1,4 @@
-/* Giant Pandas (Brian Li, Melody, Weichen Liu)
+/* Giant Pandas (Brian Li, Melody Lew, Weichen Liu)
 APCS
 HW05 -- SummerHW01
 2021-09-27
