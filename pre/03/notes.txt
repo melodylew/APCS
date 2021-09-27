@@ -1,1 +1,7 @@
+/* Giant Pandas (Brian Li, Melody Lew, Weichen Liu)
+APCS
+HW05 -- SummerHW03
+2021-09-27
+*/
 
+We just followed the flow of the algorithm and knowing that system.out.println allows the next thing printed to be on a new line, this was fairly simple. At first, I was stuck on what to put in the boxes for the methods, but since there are no parameters, that means the box is empty. 
