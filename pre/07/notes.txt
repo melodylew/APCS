@@ -1,1 +1,7 @@
+/* Giant Pandas (Brian Li, Melody Lew, Weichen Liu)
+APCS
+HW05 -- SummerHW07
+2021-09-27
+*/
 
+The sieve function was pretty confusing, but when we figured out that we could just use multiple for loops, one going through all the numbers in the array, and one crossing out the prime numbers, it was smooth sailing from there. I watched a couple videos about the Sieve of Eratosthenes and implemented an algorithm that functions like the Sieve of Eratosthenes.  
