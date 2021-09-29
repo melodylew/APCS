@@ -1,0 +1,29 @@
+Giant Pandas (Brian Li, Melody Lew, Weichen Liu)
+APCS
+HW06 -- Hello, World!
+2021-09-28
+
+
+
+Racket: 
+
+#lang racket
+(display "Hello, world!")
+
+Netlogo:
+
+to greet
+  print "Hello, world!"
+end
+
+Python:
+
+print("Hello, world!")
+
+
+Similarities:
+In all three languages, the string "Hello, world!" is encased in quotation marks. Their respective functions (display, print, and print, respectively,) all serve the same purpose within a program; that is, to display a message on the screen. In this particular program, these functions served to display/print a string. 
+
+Differences:
+Although these functions serve the same purpose, the syntax is different. The print function is inside the parentheses for Scheme, but outside for Python. NetLogo does not even have parentheses. NetLogo seems to be the most complicated because you have to make a whole method to print "Hello, world!". However, there is an alternative way by simply writing "observer > print "Hello, world!" in the command center. 
+
