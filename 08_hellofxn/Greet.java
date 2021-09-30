@@ -5,7 +5,7 @@ HW08 -- Refactor Freshie Zero
 
 
 public class Greet {
-  public static void greet (String){
+  public static void greet (String[] args){
     System.out.println("No hablo queso");
   }
 }
