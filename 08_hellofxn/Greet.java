@@ -1,4 +1,4 @@
-/* Cheese: Melody Lew and Corinna Chen
+/* Cheese: Melody Lew and Corina Chen
 APCS
 HW08 -- Refactor Freshie Zero
 2021-09-30 */
