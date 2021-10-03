@@ -1,4 +1,4 @@
-//Octonauts: Melody Lew and Ducky Ollie/Owen
+//Giant Pandas: Brian Li, Weichen Liu, Melody Lew, Robert, Blueface, Ollie
 //APCS
 //HW09 -- What Are BigSibs Good For?
 //2021-10-01 
