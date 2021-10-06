@@ -5,7 +5,8 @@
 
 /*
 DISCO
- 0. 
+ 0. new is used to create a new object.
+ 1. When we use richard or any of the objects, it can use any method in BigSib.
     
 QCC
  0. Is String greeting not an instance variable because it is not outside the method? What is the difference if a variable is an instance variable or not?
@@ -15,7 +16,7 @@ public class Greet {
   public static void main( String[] args ) {
     String greeting; 
 
-    BigSib richard = new BigSib();
+    BigSib richard = new BigSib(); //creates a new object
     richard.setHelloMsg("Word up");
 
     greeting = richard.greet("freshman");
