@@ -16,7 +16,7 @@ public class Greet {
   public static void main( String[] args ) {
     String greeting;
     BigSib richard = new BigSib(); //BigSib richard takes the value of a newly created instance of class BigSib
-    BigSib grizz = new BigSib();
+    BigSib grizz = new BigSib(); // because this is default constructor, it doesn't take any args, hence why we have to repeat .setHelloMsg later on
     BigSib dotCom = new BigSib();
     BigSib tracy = new BigSib();
     
