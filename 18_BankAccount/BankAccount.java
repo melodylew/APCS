@@ -45,9 +45,9 @@ public class BankAccount{
   private void printAccountInfo(){
     System.out.println(fullName); //do we reference setFullName or just fullName?
   }
-  private double deposit(double){
+  //private double deposit(double){
     
-  private double withdraw(double)
+//  private double withdraw(double)
 
   public static void main(String[] args){
     setFullName("Bob Smith");
