@@ -65,16 +65,15 @@ public class BankAccount{
     balance = balance + depositAmount;
   }
 
-  public void withdraw(double withdrawAmount){
-    boolean canWithDraw = true;
+  public boolean withdraw(double withdrawAmount){
     if (withdrawAmount > balance){
       balance = balance;
       System.out.println("Error: Insufficient funds. Cannot withdraw this amount.");
-      canWithDraw = false;
+      return false;
     }
     else {
       balance = balance - withdrawAmount;
-      canWithDraw = true;
+      return true;
     }
   }
 
