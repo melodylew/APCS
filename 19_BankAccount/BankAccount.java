@@ -28,14 +28,14 @@ public class BankAccount{
     return passwd;
   }
   public short setPin(short newPin){
-    if (pin >= 1000 && pin <= 9998){
+    if (newPin >= 1000 && newPin <= 9998){
       pin = newPin;
-      return pin;
     }
     else {
       pin = 9999;
       System.out.println("Invalid pin");
    }
+    return pin;
   }
   public int setAcctNum(int newAcctNum){
     acctNum = newAcctNum;
