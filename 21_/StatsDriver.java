@@ -1,16 +1,30 @@
+/*
+UnicornHead: Melody Lew, Ariella Katz, Lior Polischouk
+APCS pd6
+HW21 -- STAtisTically Speaking...
+2021-10-20
+*/
+
+/*
+DISCO:
+
+QCC:
+
+*/
+
 public class StatsDriver{
   public static void main(String[] args){
     System.out.println("Stats test = new Stats()");
     System.out.println("test.mean(2,4)");
     System.out.println("...should be 3");
     System.out.println("test.mean(3,4)");
-    System.out.println("...should be 3");
+    System.out.println("...should be 3"); //rounds down
     System.out.println("test.mean(4,4)"); 
     System.out.println("...should be 4");
     System.out.println("test.mean(2.0,4.0)");
     System.out.println("...should be 3.0");
     System.out.println("test.mean(3.0,4.0)");
-    System.out.println("...should be 3.5");
+    System.out.println("...should be 3.5"); 
     System.out.println("test.mean(4.0,4.0)");
     System.out.println("...should be 4.0");
     System.out.println("test.max(3,4)");
