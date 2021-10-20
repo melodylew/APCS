@@ -1,10 +1,13 @@
 /*
-UnicornHead: Melody Lew, Ariella Katz
+UnicornHead: Melody Lew, Ariella Katz, Lior Polischouk
+APCS pd6
+HW21 -- STAtisTically Speaking...
+2021-10-20
 */
 
 import java.lang.Math;
 
-public class StatsDriver{
+public class Stats{
   public static int mean(int a, int b){
     int avg = (a+b)/2;
     return avg;
@@ -37,12 +40,5 @@ public class StatsDriver{
     double mean = Math.sqrt(a*b);
     return mean;
   }
-  
-  public static void main(String[] args){
-    StatsDriver test = new StatsDriver();
-    test.mean(2,4);
-    test.mean(3,4);
-    test.mean(2.0,4.0);
-    test.mean(3.0,4.0);
-    test.max();
+}
     
