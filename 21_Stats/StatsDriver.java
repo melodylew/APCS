@@ -8,11 +8,15 @@ HW21 -- STAtisTically Speaking...
 /*
 DISCO:
 0. Integer division rounds down to 0, while double division gives a more precise approximation.
+1. If you input ints for geoMean, the output will be an int, but if you input doubles, the output is a double.
 
 QCC:
 0. Our test cases primarily test whether our methods can return an accurate value for special cases. For example, can int mean return a mean
-that is not an integer? Can max return the maximum parameter when both parameters are the same value? What other cases should we include
-to make our code touch all bases?
+	that is not an integer? Can max return the maximum parameter when both parameters are the same value? What other cases should we include
+	to make our code touch all bases?
+1. What is the difference between the main() method of StatsDriver.java and that of
+   Stats.java?
+
 */
 
 public class StatsDriver {
