@@ -4,6 +4,7 @@ APCS pd6
 HW21 -- STAtisTically Speaking...
 2021-10-20
 */
+
 /*
 DISCO:
 0. Integer division rounds down to 0, while double division gives a more precise approximation.
