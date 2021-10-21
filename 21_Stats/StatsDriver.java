@@ -43,7 +43,7 @@ public class StatsDriver {
     //double geoMean
 		System.out.print(Stats.geoMean(16.0,4.0));
 		System.out.println("...should be 8.0");
-    System.out.print(Stats.geoMean(16,5));
+    System.out.print(Stats.geoMean(16.0,5.0));
 		System.out.println("...should be 8.9"); //approximates
 	}
 }
