@@ -15,7 +15,7 @@ to make our code touch all bases?
 */
 
 public class StatsDriver {
-	public static void main(String[] args) {
+public static void main(String[] args) {
     //int mean
 		System.out.print(Stats.mean(2,4));
 		System.out.println("...should be 3");
@@ -54,5 +54,29 @@ public class StatsDriver {
 		System.out.println("...should be 8.0");
     System.out.print(Stats.geoMean(16.0,5.0));
 		System.out.println("...should be 8.9..."); //approximates
-	}
+    //int max with 3 params
+    System.out.print(Stats.max(2,3,4));
+    System.out.println("....should be 4");
+    System.out.print(Stats.max(4,3,2));
+    System.out.println("...should be 4");
+    System.out.print(Stats.max(4,4,4));
+    System.out.println("...should be 4");
+    //double max with 3 params
+    System.out.print(Stats.max(2.0,3.0,4.0));
+    System.out.println("....should be 4.0");
+    System.out.print(Stats.max(4.0,3.0,2.0));
+    System.out.println("...should be 4.0");
+    System.out.print(Stats.max(4.0,4.0,4.0));
+    System.out.println("...should be 4.0");
+    //int geoMean with 3 params
+    System.out.print(Stats.geoMean(16,4,1));
+		System.out.println("...should be 8");
+    System.out.print(Stats.geoMean(16,5,1));
+		System.out.println("...should be 8"); //rounds down
+    //double geoMean with 3 params
+		System.out.print(Stats.geoMean(16.0,4.0,1.0));
+		System.out.println("...should be 8.0");
+    System.out.print(Stats.geoMean(16.0,5.0,1.0));
+		System.out.println("...should be 8.9..."); //approximates	
+  }
 }
