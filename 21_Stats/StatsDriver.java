@@ -71,13 +71,13 @@ public static void main(String[] args) {
     System.out.println("...should be 4.0");
     //int geoMean with 3 params
     System.out.print(Stats.geoMean(16,4,1));
-		System.out.println("...should be 8");
+		System.out.println("...should be 3");
     System.out.print(Stats.geoMean(16,5,1));
-		System.out.println("...should be 8"); //rounds down
+		System.out.println("...should be 4"); //rounds down
     //double geoMean with 3 params
 		System.out.print(Stats.geoMean(16.0,4.0,1.0));
-		System.out.println("...should be 8.0");
+		System.out.println("...should be 3.9");
     System.out.print(Stats.geoMean(16.0,5.0,1.0));
-		System.out.println("...should be 8.9..."); //approximates	
+		System.out.println("...should be 4.3..."); //approximates	
   }
 }
