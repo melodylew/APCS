@@ -4,7 +4,15 @@ APCS pd6
 HW21 -- STAtisTically Speaking...
 2021-10-20
 */
+/*
+DISCO:
+0. Integer division rounds down to 0, while double division gives a more precise approximation.
 
+QCC:
+0. Our test cases primarily test whether our methods can return an accurate value for special cases. For example, can int mean return a mean
+that is not an integer? Can max return the maximum parameter when both parameters are the same value? What other cases should we include
+to make our code touch all bases?
+*/
 public class StatsDriver {
 	public static void main(String[] args) {
     //int mean
@@ -44,6 +52,6 @@ public class StatsDriver {
 		System.out.print(Stats.geoMean(16.0,4.0));
 		System.out.println("...should be 8.0");
     System.out.print(Stats.geoMean(16.0,5.0));
-		System.out.println("...should be 8.9"); //approximates
+		System.out.println("...should be 8.9..."); //approximates
 	}
 }
