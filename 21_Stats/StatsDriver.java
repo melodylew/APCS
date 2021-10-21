@@ -13,6 +13,7 @@ QCC:
 that is not an integer? Can max return the maximum parameter when both parameters are the same value? What other cases should we include
 to make our code touch all bases?
 */
+
 public class StatsDriver {
 	public static void main(String[] args) {
     //int mean
