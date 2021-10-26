@@ -3,7 +3,7 @@ Giant Pears: Melody Lew and Jacob Kirmayer
 APCS pd6
 HW24 -- Get It While You Can
 2021-10-25
-time spent: 
+time spent: 0.8 hrs
 */
 
 /*
