@@ -1,5 +1,5 @@
 /*
-UnicornHead: Melody Lew, Ariella Katz, Lior Polischouk
+UnicornHead: Melody Lew, Ariella Katz, Lior Polischouk, Ollie, Tom, Toothless
 APCS pd6
 HW26 -- GCD Three Ways
 2021-10-27
