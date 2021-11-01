@@ -6,6 +6,8 @@ HW28 -- PPMP
 time spent: 0.5 hours
 */
 
+//Given a string, return a string where for every char in the original, there are two chars.
+
 public class doubleChar {
   public static void main(String args[]){
     System.out.println(doubleChar("The")); // "TThhee"
