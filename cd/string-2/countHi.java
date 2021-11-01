@@ -6,6 +6,8 @@ HW28 -- PPMP
 time spent: 0.5 hours
 */
 
+//Return the number of times that the string "hi" appears anywhere in the given string.
+
 public class countHi{
   public static void main(String args[]){
     System.out.println(countHi("abc hi ho")); // 1
