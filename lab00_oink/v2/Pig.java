@@ -21,8 +21,6 @@
  *
  * NEW IN v2:
  * We handled special y cases
- * We handled capitalization, capitalizing the first letter if the original word was capitalized
- * We handled punctuation, appending it at the end
  */
 
 
