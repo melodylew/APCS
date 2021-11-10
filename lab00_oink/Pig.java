@@ -1,29 +1,33 @@
 /* Rocks: Kevin Xiao+Mr.Swag, Melody Lew+Ollie, Anthony Sun+Corn
  * APCS
- * Lab00 - oink v0
- * 2021-11-08
- * time spent: 1 hr
- */
-
-/* TODO:
- * Implement:
- * 	Capitalization
- * 	Punctuation
- * 	y-special cases
+ * Lab00 - oink v4
+ * 2021-11-09
+ * time spent: 3 hr
  */
 
 /* DISCO:
  * indexOf() returns -1 if the index of a specified character cannot be found
  * y can sometimes be a vowel in pig latin
+ * .equals(x) = y compares objects
+ * you can apply the principles of parsing through a String to find an integer to parsing through a phrase to isolate words
  *
  * QCC:
- * What are the rules for y special cases?
- * What's the most efficient way to account for all possible cases?
+ * How can we account for punctuation that's not at the end of a word?
+ * How can we handle numbers?
+ * 
+ * HOW WE UTILIZED SCANNER DEMO (v4):
+ * We ran the input from Scanner through our pig latin translator
+ * 
+ * WHAT CAUSES THE RUNTIME ERROR IN THE SCANNER DEMO:
+ * We didn't run into a runtime error, but we were confused about why the program "froze" until we realized that the program was waiting for an input
+ * 
+ * NEW IN V4:
+ * We added scanner functionality
  */
 
+import java.util.Scanner;
 
-  public class Pig
-{
+public class Pig {
   //Q: How does this initialization make your life easier?
   //A: It declares a constant that can be accessed anywhere in the class
   private static final String VOWELS = "aeiouy";
@@ -103,6 +107,43 @@
   }
 
 
+    /**
+    String firstVowel(String) -- returns first vowel in a String
+    pre:  w != null
+    post: firstVowel("") --> ""
+    firstVowel("zzz") --> ""
+    firstVowel("meatball") --> "e"
+    **/
+  public static String firstVowel( String w ) {
+    String ans = "";
+
+    if (w.toLowerCase().substring(0,1).equals("y")) {
+      w=w.substring(1);
+    } // youtube -> outube
+
+    if ( hasAVowel(w) )
+    //Q: Why this necess?
+    //A: because it will give an error if the word doesnt have a vowel
+      ans = allVowels(w).substring(0,1);
+
+    return ans;
+  }
+
+
+      /**
+    boolean beginsWithVowel(String) -- tells whether a String begins with a vowel
+    pre:  w != null and w.length() > 0
+    post: beginsWithVowel("apple")  --> true
+    beginsWithVowel("strong") --> false
+    **/
+    public static boolean beginsWithVowel( String w ) {
+      if (w.toLowerCase().substring(0,1).equals("y")) {
+        return false;
+      }
+    return isAVowel( w.substring(0,1) );
+    }
+
+
     /*=====================================
       boolean isPunc(String) -- tells whether a character is punctuation
       pre:  symbol.length() == 1
@@ -153,26 +194,56 @@
     }
 
 
-
-
   public static String engToPig( String w ) {
 
     String ans = "";
+    String append = "";
+    if (hasPunc(w)) {
+        append = w.substring(w.length()-1);
+        w=w.substring(0,w.length()-1);
+    }
 
-    if ( beginsWithVowel(w) )
+    if ( beginsWithVowel(w.toLowerCase()) ) {
       ans = w + "way";
-
+    }
+    
     else {
-      int vPos = w.indexOf( firstVowel(w) );
+      int vPos = w.indexOf( firstVowel(w.toLowerCase()) );
       ans = w.substring(vPos) + w.substring(0,vPos) + "ay";
     }
+
+    if (beginsWithUpper(w)) {
+      ans = ans.toLowerCase();
+      ans = ans.substring(0,1).toUpperCase() + ans.substring(1);
+    }
+
+    ans = ans + append;
+
 
     return ans;
   }
 
-  public static void main( String[] args )
-  {
-    System.out.println("");
-  }//end main()
+  public static String parsePhrase(String w) {
+    int spaceIndex = w.indexOf(" ");
+    if (spaceIndex == -1) {
+      return engToPig(w);
+    }
+
+    return parsePhrase(w.substring(0,spaceIndex)) + " " +
+           parsePhrase(w.substring(spaceIndex + 1));
+  }
+
+
+
+
+  public static void main( String[] args ) {
+
+    //instantiate a Scanner with STDIN as its bytestream
+    Scanner sc = new Scanner( System.in );
+
+    while( sc.hasNext() ) {
+      System.out.println( parsePhrase(sc.next()) );
+    }
+  }
 
 }//end class Pig
