@@ -21,7 +21,8 @@
  * What's the most efficient way to account for all possible cases?
  *
  * NEW IN v1:
- * added given code for engtopig
+ * We handled capitalization, capitalizing the first letter if the original word was capitalized
+ * We handled punctuation, appending it at the end
  */
 
 
