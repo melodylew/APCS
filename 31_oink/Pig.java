@@ -27,6 +27,10 @@ DISCO:
 0. indexOf() is used to return the index position of a char or substring in another string.
 1. final means that this method cannot by overridden by subclasses. 
 2. indexOf() returns -1 if the char or substring is not in the string. 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 118cd74e57fca19263e7513f6d80282c48c1a1b3
 QCC:
 0. Will y never be considered a vowel?
 1. How will these methods combine to create Pig Latin?
