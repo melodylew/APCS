@@ -94,8 +94,9 @@ public class Slots {
   public boolean jackpot()
   {
     boolean retBoo = false;
-
-
+    if (_fruits[0] == _fruits[1] && _fruits[0] == _fruits[2]){
+      retBoo = true;
+    }
     return retBoo;
   }
 
