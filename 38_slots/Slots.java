@@ -1,13 +1,20 @@
 /*****************************************************
- * Clyde "Thluffy" Sinclair
- * APCS pd00
- * HW38 -- Shmoney
+ * Strawberry JAM: Melody Lew + Ollie, Sophia Eiden + Giraffe, and Josiah Moltz + Hedwig
+ * APCS pd06
+ * HW38 -- Shmoney //Spin Class
  * 2021-11-18
  *
  * class Slots
  * skeleton
  *****************************************************/
 
+/*
+DISCO:
+0. .equals() compares the content of two objects while == compares the memory.
+
+QCC:
+0. When autoboxing, does the wrapper class HAVE to be the same type as the primitive?
+*/
 public class Slots {
 
   //instance variable to represent master copy for slot machine
@@ -94,7 +101,7 @@ public class Slots {
   public boolean jackpot()
   {
     boolean retBoo = false;
-    if (_fruits[0] == _fruits[1] && _fruits[0] == _fruits[2]){
+    if (_fruits[0].equals(_fruits[1]) && _fruits[0].equals(_fruits[2])){
       retBoo = true;
     }
     return retBoo;
