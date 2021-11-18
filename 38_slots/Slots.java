@@ -1,17 +1,16 @@
-/*****************************************************
- * Strawberry JAM: Melody Lew + Ollie, Sophia Eiden + Giraffe, and Josiah Moltz + Hedwig
- * APCS pd06
- * HW38 -- Shmoney //Spin Class
- * 2021-11-18
- *
- * class Slots
- * skeleton
- *****************************************************/
+// Strawberry JAM: Melody Lew + Ollie, Sophia Eiden + Giraffe, and Josiah Moltz + Hedwig
+ // APCS pd06
+ // HW38 -- Shmoney //Spin Class / Arrays / Casino Slot Machine
+ // 2021-11-18
+ // time spent: .8 hour (45 minutes)
+
 
 /*
 DISCO:
 0. .equals() compares the content of two objects while == compares the memory.
-
+1. Do NOT remake your variable inside of the constructor, you will wish for the sweet release of death
+   Just don't use String[]
+2. Randomizing was so simmppllee that was really cool
 QCC:
 0. When autoboxing, does the wrapper class HAVE to be the same type as the primitive?
 */
@@ -44,7 +43,7 @@ public class Slots {
   public Slots()
   {
     //allocate memory for _fruits based on size of FRUITS:
-    String[] _fruits = new String[FRUITS.length];
+    _fruits = new String[FRUITS.length];
 
     //copy elements of FRUITS into _fruits:
     for (int i = 0; i < FRUITS.length; i++){
@@ -89,6 +88,7 @@ public class Slots {
     // the val at each index with a randomly chosen other index
     for(int i = 0; i<_fruits.length; i++ ){
       swap(i, (int)(Math.random() * _fruits.length));
+    }
   }
 
 
@@ -98,10 +98,9 @@ public class Slots {
     post: returns true if first 3 slots represent winning combo,
     false otherwise
     =====================================*/
-  public boolean jackpot()
-  {
+  public boolean jackpot() {
     boolean retBoo = false;
-    if (_fruits[0].equals(_fruits[1]) && _fruits[0].equals(_fruits[2])){
+    if ( _fruits[0].equals(_fruits[1]) && _fruits[0].equals(_fruits[2]) ) {
       retBoo = true;
     }
     return retBoo;
@@ -117,8 +116,13 @@ public class Slots {
     =====================================*/
   public boolean miniWin()
   {
-    boolean retBoo = ?
-
+    boolean retBoo = false;
+    if ( _fruits[0].equals(_fruits[1]) && _fruits[0].equals(_fruits[2]) ) {
+      retBoo = true;
+    }
+    else if( !_fruits[0].equals(_fruits[1]) && !_fruits[1].equals(_fruits[2]) && !_fruits[0].equals(_fruits[2]) ) {
+      retBoo = true;
+    }
 
     return retBoo;
   }
@@ -128,13 +132,18 @@ public class Slots {
   public static void main( String[] args ) {
     //usage: move bar below down 1 line at a time to test functionality...
 
-    /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
     Slots machine01 = new Slots();
     Slots machine02 = new Slots();
+
+    /*
+    System.out.println(machine01._fruits);
+    System.out.println(machine02._fruits);
+    */
     //test to verify slot machines function indepently
     System.out.println();
-    System.out.println( "Machine01 initial state:\t" + machine01 );
-    System.out.println( "Machine02 initial state:\t" + machine02 );
+    System.out.println( "Machine01 initial state:\t" + machine01.toString() );
+    System.out.println( "Machine02 initial state:\t" + machine02.toString() );
     System.out.println( "\nSpinning machine01...\n" );
     machine01.spinOnce();
     System.out.println();
@@ -164,7 +173,6 @@ public class Slots {
     System.out.println( "====================================" );
     System.out.println( "Your spin..." + "\t" + machine01 );
     System.out.println( "JACKPOT!\n" );
-      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
   }//end main
 
 }//end class Slots
