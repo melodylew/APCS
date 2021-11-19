@@ -1,0 +1,65 @@
+/*
+Melody Lew + Ollie
+APCS pd06
+HW36 -- All Quacked Up (Appendix D Debugging)
+2021-11-18
+time spent: 
+*/
+
+Compile-time Errors: syntax is incorrect
+  - Protip: Start with a working program and add small amounts of code as you go
+  - Only the first error message is truly reliable; fix one error at a time and then recompile
+  - The compiler tells you where it noticed a problem, not necessarily where the error is
+  - Make sure the program you are editing is the one the compiler is compiling
+  - Debugging by bisection:
+      - make a backup of the file  // <name>.java.old
+      - delete half the code from the original file and compile again. This helps you see where the error is (either first or second half)
+  - Error messages are indications that something is wrong, but the remedies these error messages suggest are unreliable
+
+
+Run-time Errors: something goes wrong while the program is running
+  - Protip: add print statements to figure out what is wrong
+  - To remedy a hanging program, figure out where and why the program is getting stuck in the infinite loop by adding print statements
+  - An infinite recursion can produce a StackOverflowError. Check for a base case, in which there is a condition that makes the method return 
+    without a recursive invocation. If there is no base case, revise algorithm and identify a base case. If the program is not reaching the 
+    base case, add a print statement at the start of the method to display parameters. If params are not moving towards base case, you'll see
+    why not.
+  - If the run-time error is not due to either of the above, it may have something to do with the lack of understanding of the flow of execution. 
+    Thus, add print statements to the start of each method to display a trace of each method when invoked.
+  - An exception has the name, line of the exception, and a stack trace (method that was running, method that invoked it, and invoked that on, etc.)
+    - First, examine the place where the error occurred and try to figure out what happened
+    - NullPointerException: attempt to access an instance variable or invoke a method on an object that is currently null
+      - Figure out which variable is null and how it is null
+      - When a variable is declared with an array type, the elements are initially null until a variable is assigned to them
+    - ArrayIndexOutofBoundsException: the index used to access an array is either negative or greater than array.length -1
+      - If the site of the problem is found, add a print statement before it to display the index and length of the array
+      - Work backwards and see where the array and index come from
+      - Find the nearest assignment statement and see if it is doing the right thing. If one is a parameter, go to place
+        where the method was invoked and see where the values are coming from
+    - FileNotFoundException: Java did not the file it was looking for
+      - file may have to be imported into the project. Or, the file exists and the path is correct; depends on filesystem
+    - ArithmeticException: error occurred during an arithmetic operation
+  - Simplify the output or program if the print statements become too overwhelming
+    - Simplify output: remove, comment out, combine, or reformat the print statements
+    - Simplify program: scale down the problem the program is working on
+  - Clean up the code
+  - Finding the minimal test case and/or reorganizing the program -> find bug
+  
+Logic Errors: program does not do what the coder wants it to do
+  - Make a connection between the code and the behavior you get
+    - The program should do something that doesn't seem to be happening or when something happens that shouldn't, find the code in the program
+    and see its execution
+    - If an unexpected effect is produced, ensure that you understand the code and read the documentations for those methods and use small 
+    test cases
+  - Protip: Have a mental model of what your code does
+  - Break the program into small components and test them independently
+  - Break a complex expression into a series of assignments to temporary variables, so it is easier to debug
+  - Use temporary ariables if a return statement has a complex expression
+  - println -> output displayed immediately
+  - print -> output is stored without being displayed until the next newline
+  - If stuck, get away from computer. Symptoms include frustration, rage, supersticious beliefs and magical thinking, sour grapes. Return calm. 
+  - When you bring someone to help, make sure your program is simple as possible, have print statements, work on smallest input that causes 
+    an error, UNDERSTAND!
+    When you call for someone's help, given them the info. However, you might see the answer as you explain it. 
+  - Rubber Ducking -> DUCKIES!!
+  - Fix bug by rethinking the algorithm or adjusting the mental model. Analyze the bug.
