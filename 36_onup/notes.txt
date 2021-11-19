@@ -3,7 +3,7 @@ Melody Lew + Ollie
 APCS pd06
 HW36 -- All Quacked Up (Appendix D Debugging)
 2021-11-18
-time spent: 
+time spent: 0.8 hrs
 */
 
 Compile-time Errors: syntax is incorrect
