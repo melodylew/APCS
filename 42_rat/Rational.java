@@ -1,17 +1,18 @@
 // Team Strawberry_JAM: Josiah Moltz, Melody Lew, Sophia Eiden
 // APCS pd 06
-// HW40 - Be Rational / Rational class / Constructor, Multiply, Divide, toString, floatValue
-// 2021-12-1
-// time spent: 0.5 hour
-// A HUGE THANKS TO LAUREN LEE FOR PROVIDING THE MAJORITY OF OUR TEST CASES !!!! <3
+// HW41 - Be More Rational / Rational ++
+// 2021-12-2
+// time spent: 0.6 hrs
+
 
 /*
 DISCO
-0. When printing an object, uses toString method (the redefined one)
-1. Just a semicolon runs
-2. Without a semicolon, the if is not "complete" (?)
+0. Order of the print statements in main matter because our rational parameters
+change after each arithmetic operation.
+
 QCC
-0. Why to DISCO 2.
+0. If we make the variables final, would the parameters stay the same after whichever
+operation?
 */
 
 public class Rational {
@@ -29,15 +30,6 @@ public class Rational {
       p = m;
       q = n;
     }
-
-    /* OG code... a possible code killer
-    if (n == 0) ; // Huh... that lonely semicolon... INTERESTING!?!?!?!?
-    // IF ; IS NOT INCLUDED... we're screwed else is highlighted differently and the previous if is not registered
-    else {
-      p = m;
-      q = n;
-    }
-    */
   }
 
   public double floatValue() {
@@ -47,15 +39,64 @@ public class Rational {
   public String toString() {
     return p + "/" + q;
   }
+
+  //from Stats.java
+  public static int gcd(int a, int b) {
+    a = Math.abs(a);
+    b = Math.abs(b);
+    int i = 1;
+    int gcd = 1;
+    if (a == 0){
+      return b;
+    }
+    while (i <= Math.min(a, b)) {
+        if ((a % i == 0) && (b % i == 0)) {
+            gcd = i;
+        }
+        i ++;
+    }
+    return gcd;
+  }
+
+  public void reduce(){
+    int g = gcd(p,q);
+    p = p / g;
+    q = q / g;
+  }
+
+  //calling object: object we are calling from...
+  public int compareTo(Rational r){
+    if (this.floatValue() == r.floatValue()){
+      return 0;
+    }
+    else if (this.floatValue() > r.floatValue()){
+      return 1;
+    }
+    else {
+      return -1;
+    }
+  }
+
   public void add(Rational addend){
-    if (addend.q == q){
+    if (addend.q == q){ //same denominator
       p = addend.p + p;
     }
-    else(){
+    else{ //get common denominator
       p = (p * addend.q) + (q * addend.p);
       q = (q * addend.q);
     }
   }
+
+  public void subtract(Rational subtrahend){
+    if (subtrahend.q == q){ //same denominator
+      p = subtrahend.p - p;
+    }
+    else{ //get common denominator
+      p = (p * subtrahend.q) - (q * subtrahend.p);
+      q = (q * subtrahend.q);
+    }
+  }
+
   public void multiply(Rational multiplier) {
     // if we multiply p/q and m/n, the result is p * m (numerator) / q * n (denominator)
     p = p * multiplier.p; // *SNIFF SNIFF* I SMELL A QAF POST :)))))))))))
@@ -71,36 +112,20 @@ public class Rational {
   }
 
   public static void main(String[] args) {
-    // TY LAUREN LEE WE STAN YOUUUU
-    Rational def = new Rational();
-    System.out.println("Default contructor: " + def + " ...should be 0/1");
-    System.out.println("//====================================");
-
-    Rational d0 = new Rational(1, 0);
-    System.out.println("Denominator set to 0: " + d0 + " ...should be 0/1");
-    System.out.println("//====================================");
-
-    Rational r = new Rational(1 , 8);
-    Rational s = new Rational(1 , 2);
-    Rational t = new Rational(21 , 5);
-    System.out.println("r: " + r + " ...should be 1/8");
-    System.out.println("s: " + s + " ...should be 1/2");
-    System.out.println("t: " + t + " ...should be 21/5");
-    System.out.println("float value of r " + r.floatValue() + " ...should be 0.125");
-    System.out.println("float value of s " + s.floatValue() + " ...should be 0.5");
-    System.out.println("float value of t " + t.floatValue() + " ...should be 4.2"); // :)
-    r.multiply(s);
-    System.out.println("value of r after multiplication: " + r + " ...1/16");
-    System.out.println("value of s after multiplication: " + s + " ...1/2");
-    r.divide(s);
-    System.out.println("value of r after division: " + r + " ...2/16");
-    System.out.println("value of s after division: " + s + " ...1/2");
-    r.multiply(t);
-    System.out.println("value of r after multiplication: " + r + " ...42/80");
-    System.out.println("value of t after division: " + t + " ...21/5");
-    r.divide(t);
-    System.out.println("value of r after multiplication: " + r + " ...210/1680");
-    System.out.println("value of t after division: " + t + " ...21/5");
+    Rational r = new Rational(2,3); //Stores the rational number 2/3
+    Rational s = new Rational(1,2); //Stores the rational number 1/2
+    Rational t = new Rational(4,18); //Stores the rational number 4/18
+    Rational u = new Rational(4,6); //Stores the rational number 4/6
+    Rational v = new Rational(6,4); //Stores the rational number 6/4
+    System.out.println(r.compareTo(u));
+    r.add(s);  //Adds r to s, changes r to 7/6.  s remains 1/2
+    System.out.println(r);
+    t.reduce(); //Changes t to 2/9
+    System.out.println(t); //should be 2/9
+    r.subtract(s);
+    System.out.println(r);//should be 8/12
+    v.reduce();
+    System.out.println(v); //should be 3/2
   }
 
 }
