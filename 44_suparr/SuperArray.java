@@ -2,6 +2,7 @@
 // APCS1 pd6
 // HW44 -- expanding SuperArray functionality, encapsulation
 // 2021-12-07
+// time spent: 0.6hrs
 
 /***************************
  * class SuperArray version 2.0
