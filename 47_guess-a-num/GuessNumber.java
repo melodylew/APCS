@@ -2,7 +2,7 @@
 // APCS pd6
 // HW47 -- Guess Again
 // 2021-12-15w
-// time spent: _ hrs
+// time spent: .5 hrs
 
 /***
  * class GuessNumber -- fun fun fun!
@@ -20,12 +20,14 @@
  ***/
 
 /***
-    DISCO:
-    
-    
-    QCC:
-    
-    
+DISCO
+0. If the guess is out of bounds,
+   the program says that the guess is too low/high
+   regardless of the fact that we did not have a conditional that explicitly stated to do this
+   
+QCC
+0. (b-a+1) * Math.random() + a always ensures that the target is within the range.
+
  ***/
 import java.util.Scanner;
 
