@@ -1,20 +1,23 @@
 // Team Strawberry_JAM: Josiah Moltz, Melody Lew, Sophia Eiden
 // APCS pd 06
-// HW49 -
+// HW49 - Rational Standards Compliance
 // 2021-12-22
-// time spent: hrs
+// time spent:  0.5 hrs
 
 
 /*
 DISCO
-0.
+0. throw new ClassCastExceptions indicates that the code has attempted to cast
+ an object to a subclass of which it is not an instance.
+1. objects can be typecasted.
+
 
 QCC
-0.
-
+0. Rational implements Comparable to see if it complies with Comparable
+1. instanceof = is-a
 */
 
-public class Rational {
+public class Rational implements Comparable{
   private int p;
   private int q;
 
@@ -63,28 +66,6 @@ public class Rational {
     q = q / g;
   }
 
-  //calling object: object we are calling from...
-  public int compareTo(Rational r){
-    if (this.floatValue() == r.floatValue()){
-      return 0;
-    }
-    else if (this.floatValue() > r.floatValue()){
-      return 1;
-    }
-    else {
-      return -1;
-    }
-  }
-
-  public boolean equals(Object o){
-    if (o instanceof Rational){
-      if (compareTo((Rational) o) == 0){
-        return true;
-      }
-    }
-    return false;
-  }
-
   public void add(Rational addend){
     if (addend.q == q){ //same denominator
       p = addend.p + p;
@@ -117,5 +98,30 @@ public class Rational {
       p = p * divisor.q;
       q = q * divisor.p;
     }
+  }
+
+  public int compareTo(Object o){
+    if (!(o instanceof Rational)){
+      throw new ClassCastException("\ncompareTo() input not a Rational");
+    }
+    Rational r = (Rational) o; //typecast
+    if (this.floatValue() == r.floatValue()){
+      return 0;
+    }
+    else if (this.floatValue() > r.floatValue()){
+      return 1;
+    }
+    else {
+      return -1;
+    }
+  }
+
+  public boolean equals(Object o){
+    if (o instanceof Rational){
+      if (compareTo((Rational) o) == 0){
+        return true;
+      }
+    }
+    return false;
   }
 }
