@@ -59,6 +59,18 @@ public class Magpie2
 		{
 			response = "They sound like a good teacher.";
 		}
+		else if (statement.trim().length() == 0)
+		{
+			response = "Talk to me.";
+		}
+		else if (statement.indexOf("color") >= 0)
+		{
+			response = "I don't have a favorite color.";
+		}
+		else if (statement.indexOf("weather") >= 0)
+		{
+			response = "It's quite cold.";
+		}
 		else
 		{
 			response = getRandomResponse();
