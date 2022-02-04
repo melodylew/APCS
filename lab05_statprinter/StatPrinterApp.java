@@ -1,8 +1,8 @@
-// Clyde "Thluffy" Sinclair
-// APCS pd0
+// Butterfingers: Melody Lew, Corina Chen, Fang Min Chen
+// APCS pd6
 // L05 -- pulling it together
 // 2022-02-03r
-// time spent:  hrs
+// time spent:  2.0 hrs
 
 /***
  * class StatPrinterApp
