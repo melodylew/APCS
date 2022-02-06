@@ -1,7 +1,7 @@
 // Butterfingers: Melody Lew, Corina Chen, Fang Min Chen
 // APCS pd6
 // L05 -- pulling it together
-// 2022-02-03r
+// 2022-02-07m
 // time spent: 2.0 hrs
 
 
@@ -73,7 +73,7 @@ public class StatPrinter
     for (Integer j : data){
       _frequency.set(j,_frequency.get(j)+1);
     }
-  }
+  } //big O notation: O(n)
 
 
   //*************** QUESTION 01 **************************
@@ -88,7 +88,7 @@ public class StatPrinter
       }
     }
     return currentMax;
-  }
+  } //big O notation: O(n)
 
 
   //*************** QUESTION 03 **************************
@@ -103,8 +103,10 @@ public class StatPrinter
   //    isLocalMode(5) -> true
   public boolean isLocalMode( int i )
   {
-    return (i > 0 && i < _frequency.size() - 1 && _frequency.get( i - 1 ) < _frequency.get( i ) && _frequency.get( i + 1 ) < _frequency.get( i ));
-  }
+    return (i > 0 && i < _frequency.size() - 1
+    && _frequency.get( i - 1 ) < _frequency.get( i ) 
+    && _frequency.get( i + 1 ) < _frequency.get( i ));
+  } //big O notation: O(1)
 
 
   //*************** QUESTION 04 **************************
@@ -118,7 +120,7 @@ public class StatPrinter
       }
     } return mode;
 
-  }
+  } //big O notation: O(n)
 
 
   //*************** QUESTION 05 **************************
@@ -132,6 +134,6 @@ public class StatPrinter
         System.out.print("*");
       }
     } System.out.println();
-  }
+  } //big O notation: O(n^2)
 
 }//end class StatPrinter
