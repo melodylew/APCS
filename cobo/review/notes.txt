@@ -23,3 +23,8 @@ sentimentVal() takes in single String parameters.
 3b. This statement will not compile because 0.5 is a double and not a String type.
 3c. This statement will not compile because "good" and "bad" are two Strings
 and sentimentVal() only takes in one String.
+
+
+ACTIVITY 2: Sentiment Value and Star Ratings
+
+1a. 
