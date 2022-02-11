@@ -1,0 +1,25 @@
+Melody Lew
+APCS pd06
+HW63 -- Read/Review/Expand
+2022-02-11f
+time spent:0.5 hrs
+
+ACTIVITY 1: Introduction (Reviews and Sentiment Value)
+
+1a. public static double sentimentVal( String word )
+1b. sentimentVal() requires a String parameter. If you pass a different type of
+parameter, there will be a compile error stating that the types are incompatible.
+1c. The method returns a double.
+
+2.
+Method Call                     || Return Value
+===============================================================
+sentimentVal("hello");             0.75
+sentimentVal("awesome");           0.92
+sentimentVal("peers");             0.5
+
+3a. This statement will compile because "warm" is a single String and
+sentimentVal() takes in single String parameters.
+3b. This statement will not compile because 0.5 is a double and not a String type.
+3c. This statement will not compile because "good" and "bad" are two Strings
+and sentimentVal() only takes in one String.
