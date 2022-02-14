@@ -206,4 +206,16 @@ public class Review {
     }
     return newRev + text;
   }
+  
+// tests code, as instructed by student guide
+  public static void main(String[] args){
+    System.out.println(sentimentVal("hello"));
+    System.out.println(sentimentVal("awesome"));
+    System.out.println(sentimentVal("peers"));
+
+    System.out.println(totalSentiment("SimpleReview.txt"));
+    System.out.println(starRating("SimpleReview.txt"));
+
+    System.out.println(fakeReview("SimpleReview.txt"));
+  }
 }
