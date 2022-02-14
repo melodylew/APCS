@@ -1,8 +1,8 @@
-Melody Lew
+ButterFingers: Melody Lew, Corina Chen, Fang Chen
 APCS pd06
-HW63 -- Read/Review/Expand
+L06 -- Read/Review/Expand
 2022-02-11f
-time spent:0.5 hrs
+time spent: 5.0 hrs
 
 ACTIVITY 1: Introduction (Reviews and Sentiment Value)
 
@@ -64,3 +64,79 @@ ACTIVITY 4: Create a Positive or Negative Review
 5. Removes first index.
 6. Not removing it might cause an exception where no sentimentVal is returned.
 7. Yes, if every chance of negativity is removed and only positive adjectives are used.
+
+ACTIVITY 5: 
+
+Compilable and Runnable Program: Activity5.java
+Project based off of Wordle
+
+1. We chose to implement this program because it is a simple and fun minigame that
+processes user input data (the word) and checks if each letter is in the
+mystery word and if it is in the correct position.
+
+2. The stages for completing the project are as follows: (1) brainstorm ideas,
+(2) map out basic algorithm on KtS, (3) code individual parts (i.e. main(),
+overloaded constructor for the game, play(), isIn(), and displayCheck()).
+
+3. Header: public boolean isIn(String tempLetter) {}
+The chosen parameter is a String, more specifically, the 1-length substring of
+the word that the player guesses. We used this parameter to allow the method to
+compare the letter with letters of the mystery word. We made the method
+non-static because we wanted to call the instance variable _word within the
+method.
+
+4. 
+~~~~~~~~~~~~~~~~~~~~~~~~~ Code Segment ~~~~~~~~~~~~~~~~~~~~~~~~~
+if (tempLetter.compareTo(_word.substring(i, i + 1)) == 0) {
+  _check[i] = "+";
+  _letters.remove(_letters.indexOf(tempLetter));
+}
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The methods of String class being called are compareTo() and substring(). We
+use compareTo() to compare whether the two Strings (predetermined to be the
+same length) are the same. The method returns an int value, which We convert to
+a boolean expression with the boolean operator ==. We used substring() to take a
+1-length "piece" of the String _word; it returns a String.
+
+5.
+~~~~~~~~~~~~~~~~~~~~~~~~~ Code Segment ~~~~~~~~~~~~~~~~~~~~~~~~~
+if (isIn(tempLetter) && (_check[i].compareTo("+") != 0)) {
+  _check[i] = "?";
+  _letters.remove(_letters.indexOf(tempLetter));
+}
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Another way to achieve the same result as the boolean expression attached to
+the if statement is placing an if statement within another if statement because
+the boolean operator used is &&.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~ Equivalent ~~~~~~~~~~~~~~~~~~~~~~~~~~
+if (isIn(tempLetter)) {
+  if (_check[i].compareTo("+") != 0) {
+    _check[i] = "?";
+    _letters.remove(_letters.indexOf(tempLetter));
+  }
+}
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+6.
+~~~~~~~~~~~~~~~~~~~~~~~~~ Code Segment ~~~~~~~~~~~~~~~~~~~~~~~~~
+for (int i = 0; i < 5; i ++) {
+  _letters.add(_word.substring(i, i + 1));
+  _check[i] = "-";
+}
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+We used a for-loop iteration to set the elements of AL _letters to the five
+letters of _word and the all 5 elements of _check[] to "-".
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~ Equivalent ~~~~~~~~~~~~~~~~~~~~~~~~~~
+int i = 0;
+while (i < 5) {
+  _letters.add(_word.substring(i, i + 1));
+  _check[i] = "-";
+  i ++;
+}
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
