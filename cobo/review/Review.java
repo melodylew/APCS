@@ -196,16 +196,25 @@ public class Review {
 
 //ACTIVITY 3:
   public static String fakeReview(String fileName){
-    String text = textToString(fileName);
-    String newRev = "";
-    while (text.indexOf("*") > -1){
-      String b = text.substring(0,text.indexOf("*"));
-      text = text.substring(text.indexOf("*"));
-      text = text.substring(text.indexOf(" "));
-      newRev += b + randomAdjective();
-    }
-    return newRev + text;
-  }
+   String text = textToString(fileName);
+   String newRev = "";
+   String word = "";
+   while (text.indexOf("*") > -1 && text.indexOf(" ") > -1){
+     String b = text.substring(0, text.indexOf("*"));
+     text = text.substring(text.indexOf("*"));
+     word = text.substring(text.indexOf("*"), text.indexOf(" "));
+     word = removePunctuation(word);
+     newRev += b;
+     if (sentimentVal(word) > 0){
+       newRev = newRev + randomPositiveAdj();
+       text = text.substring(text.indexOf(" "));
+     } else {
+       newRev = newRev + randomNegativeAdj();
+       text = text.substring(text.indexOf(" "));
+     }
+   }
+   return newRev + text;
+ }
   
 // tests code, as instructed by student guide
   public static void main(String[] args){
