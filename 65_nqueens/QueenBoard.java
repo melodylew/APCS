@@ -4,14 +4,7 @@ APCS pd 06
 HW65 -- How Many Queens Can a Thinker Place, If a Thinker Can Place Queens...
 2022-02-17r
 time spent: 1.0 hr
-
-/***
- * class QueenBoard
- * Generates solutions for N-Queens problem.
- * USAGE:
- * 1. Peruse. Transcribe your KtS verbiage into block comments preceding each method where necessary.
- * 2. Implement solver method.
- */
+*/
 
 public class QueenBoard
 {
@@ -39,14 +32,22 @@ public class QueenBoard
    */
    public boolean solve()
  {
-   return solveH(0); //if true
+   boolean isSolvable = solveH(0);
+   // if (!isSolvable) {
+   //   for (int c = 0; c < _board.length; c++){
+   //     for (int r = 0; r < _board.length; r++){
+   //       _board[r][c] = 0;
+   //     }
+   //   }
+   // }
+   return isSolvable;
  }
 
 
  /**
   *Helper method for solve.
   */
- private boolean solveH( int col )
+ private boolean solveH(int col)
  {
    if (col >= _board.length) {
      return true; // comes to end of all recursions;
@@ -54,12 +55,13 @@ public class QueenBoard
    for (int row = 0; row < _board.length; row++) {
      if (addQueen(row, col)) { // adds queen if no queen
        if (solveH(col + 1)) {
-         removeQueen(row, col); // removes queen that crosses path
-       }
+         return true;
+       } // removes queen that crosses path
+       removeQueen(row, col);
      }
    }
    return false;
- }
+  }
 
 
   public void printSolution()
@@ -70,16 +72,18 @@ public class QueenBoard
         all 1's replaced with 'Q'
     */
     String board = "";
-    for (int i = 0; i < _board.length; i++){
-      for (int j = 0; j < _board.length; j++){
-        if (_board[i][j] <= 0){
-          board+= "_";
+    for (int row = 0; row < _board.length; row++){
+      for (int col = 0; col < _board.length; col++){
+        if (_board[row][col] <= 0){
+          board += "_ ";
         }
         else{
-          board += "Q";
+          board += "Q ";
+        }
       }
+      board += "\n";
     }
-  }
+    System.out.println(board);
  }
 
 
@@ -148,8 +152,9 @@ public class QueenBoard
 
   /***
    * Returns _board as a String
-   * precondition:
-   * postcondition:
+   * precondition: _board is populated with int values
+   * postcondition: String with characters in rows and columns resembling a
+   chess board
    */
   public String toString()
   {
@@ -167,36 +172,41 @@ public class QueenBoard
   //main method for testing...
   public static void main( String[] args )
   {
-    QueenBoard b = new QueenBoard(5);
-    System.out.println(b);
-    /** should be...
-       0	0	0	0	0
-       0	0	0	0	0
-       0	0	0	0	0
-       0	0	0	0	0
-       0	0	0	0	0
-    */
+    // QueenBoard b = new QueenBoard(5);
+    // System.out.println(b);
+    // /** should be...
+    //    0	0	0	0	0
+    //    0	0	0	0	0
+    //    0	0	0	0	0
+    //    0	0	0	0	0
+    //    0	0	0	0	0
+    // */
+    //
+    // b.addQueen(3,0);
+    // b.addQueen(0,1);
+    // System.out.println(b);
+    // /** should be...
+    //    0	1	-1	-2	-1
+    //    0	0	-2	0	0
+    //    0	-1	0	-1	0
+    //    1	-1	-1	-1	-2
+    //    0	-1	0	0	0
+    // */
+    //
+    // b.removeQueen(3,0);
+    // System.out.println(b);
+    // /** should be...
+    //    0	1	-1	-1	-1
+    //    0	0	-1	0	0
+    //    0	0	0	-1	0
+    //    0	0	0	0	-1
+    //    0	0	0	0	0
+    // */
 
-    b.addQueen(3,0);
-    b.addQueen(0,1);
-    System.out.println(b);
-    /** should be...
-       0	1	-1	-2	-1
-       0	0	-2	0	0
-       0	-1	0	-1	0
-       1	-1	-1	-1	-2
-       0	-1	0	0	0
-    */
-
-    b.removeQueen(3,0);
-    System.out.println(b);
-    /** should be...
-       0	1	-1	-1	-1
-       0	0	-1	0	0
-       0	0	0	-1	0
-       0	0	0	0	-1
-       0	0	0	0	0
-    */
+    QueenBoard a = new QueenBoard(5);
+    System.out.println(a.solve());
+    System.out.println(a);
+    a.printSolution();
 
   }
 
