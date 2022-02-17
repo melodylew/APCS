@@ -80,7 +80,7 @@ public class QueenBoard
       }
     }
   }
-}
+
 
 
   //================= YE OLDE SEPARATOR =================
