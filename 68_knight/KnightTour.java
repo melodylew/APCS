@@ -22,10 +22,10 @@
  * 0: Is starting at the corner of the board always ideal? Why?
  *
  * Mean execution times for boards of size n*n: (no delay)
- * n=5   s    across 5 executions
- * n=6   s    across __ executions
- * n=7   __s    across __ executions
- * n=8   __s    across __ executions
+ * n=5   longer than 1 min     across 5 executions
+ * n=6   longer than 1 min     across 5 executions
+ * n=7   longer than 5 mins    across 5 executions
+ * n=8   longer than 5 mins    across 5 executions
  *
  * POSIX PROTIP: to measure execution time from BASH, use time program:
  * $ time java KnightTour 5
