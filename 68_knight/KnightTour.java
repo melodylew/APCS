@@ -33,7 +33,7 @@
  ***/
 
 
-import java.io.*;
+ import java.io.*;
 import java.util.*;
 
 
@@ -65,14 +65,15 @@ public class KnightTour
 
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     //for random starting location, use lines below:
-    //int startX = //YOUR MATH CONSTRUCT FOR GENERATING A RANDOM LEGAL X VALUE
-    //int startY = //YOUR MATH CONSTRUCT FOR GENERATING A RANDOM LEGAL X VALUE
+    //int startX = (int) (n*Math.random())+2;
+    //int startY = (int) (n*Math.random())+2;
     //tf.findTour( startX, startY, 1 );   // 1 or 0 ?
-    //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     // PUSHING FARTHER...
     // Systematically attempt to solve from every position on the board?
+    // We would need to do a for loop for y and a for loop for a startx and we were unable to do so with the time given
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
   }//end main()
@@ -98,17 +99,13 @@ class TourFinder
     //SETUP BOARD --  0 for unvisited cell
     //               -1 for cell in moat
     //---------------------------------------------------------
-    for (int i = 0; i < _board.length; i++) {
-      // listing out everywhere that has to be -1
-      _board[0][i] = -1;
-      _board[1][i] = -1;
-      _board[i][0] = -1;
-      _board[i][1] = -1;
-      _board[i][n + 2] = -1;
-      _board[i][n + 3] = -1;
-      _board[n + 2][i] = -1;
-      _board[n + 3][i] = -1;
-    }
+    for (int i=0; i<_board.length; i++){
+	for(int j =0; j<_board.length; j++){
+		if(i<2 || j<2 || i> _board.length-3 || j>_board.length -3){
+			_board[i][j]=-1;
+		}
+}
+}
     //---------------------------------------------------------
 
   }//end constructor
@@ -158,27 +155,27 @@ class TourFinder
    **/
   public void findTour( int x, int y, int moves )
   {
-    delay(0); //slow it down enough to be followable
+    //delay(50); //slow it down enough to be followable
 
     //if a tour has been completed, stop animation
-    if ( _solved == true ) System.exit(0);
+    if ( _solved ) System.exit(0);
 
     //primary base case: tour completed
-    if ( moves == _board.length * _board.length ) { //start from 1
-      _solved = true;
+    if ( moves==_sideLength*_sideLength+1 ) {
+      _solved=true;
       System.out.println( this ); //refresh screen
       return;
     }
     //other base case: stepped off board or onto visited cell
-    if ( _board[x][y] != 0 ) {
-      return;
+    if ( _board[x][y]!=0) {
+		return;
     }
     //otherwise, mark current location
     //and recursively generate tour possibilities from current pos
     else {
 
       //mark current cell with current move number
-      _board[x][y] = moves; //numbering the moves as the path
+      _board[x][y] =moves;
 
       System.out.println( this ); //refresh screen
 
@@ -193,23 +190,21 @@ class TourFinder
        *     g . . . b
        *     . h . a .
       ******************************************/
-      //let's just bash - list out all possible ways the knight can move
-      findTour(x+1, y+2, moves+1);
-      findTour(x+1, y-2, moves+1);
-      findTour(x+2, y+1, moves+1);
-      findTour(x+2, y-1, moves+1);
-      findTour(x-1, y+2, moves+1);
-      findTour(x-1, y-2, moves+1);
-      findTour(x-2, y+1, moves+1);
-      findTour(x-2, y-1, moves+1);
-
+      findTour(x-2,y+1,moves+1);
+	findTour(x-1,y+2,moves+1);
+	findTour(x+1,y+2,moves+1);
+	findTour(x+2,y+1,moves+1);
+	findTour(x+2,y-1,moves+1);
+	findTour(x+1,y-2,moves+1);
+	findTour(x-1,y-2,moves+1);
+	findTour(x-2,y-1,moves+1);
+	//given how similar they all look, i thinkt hat it is possible to do a for loop in a for loop from x-2 to x+2 with an embedded one with y-2-> y+2 excluding y to do this but thats no fun
       //If made it this far, path did not lead to tour, so back up...
       // (Overwrite number at this cell with a 0.)
-      _board[x][y] = 0;
+        _board[x][y]=0;
 
       System.out.println( this ); //refresh screen
     }
-
   }//end findTour()
 
 }//end class TourFinder
