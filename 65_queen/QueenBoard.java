@@ -115,7 +115,7 @@ public class QueenBoard
    * precondition:
    * postcondition:
    */
-  public String  toString()
+  public String toString()
   {
     String ans = "";
     for( int r = 0; r < _board.length; r++ ) {
