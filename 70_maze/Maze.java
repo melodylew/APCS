@@ -139,6 +139,9 @@ class MazeSolver
       _solved = true;
       return;
     }
+    else if (_maze[x][y] != PATH){
+      return;
+    } //border + wall
     //otherwise, recursively solve maze from next pos over,
     //after marking current location
     else {
