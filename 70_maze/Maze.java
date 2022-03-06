@@ -16,7 +16,8 @@ avoiding a deadend loop)
 
 /***
  * DISCO
- *
+ * 0. _maze[x][y] == WALL vs _maze[x][y] = WALL : == checks if the current position
+ is a wall and = assigns the current position as a wall
  * QCC
  *
  ***/
