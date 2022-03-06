@@ -1,8 +1,9 @@
 /* Taro: Melody Lew, Ben Belotser, Fang Min Chen
 APCS pd 06
 HW70 -- Thinkers Of The Corn
-2022-03-06
+2022-03-07m
 time spent:
+
 Algorithm:
 0. Pick a starting position.
 1. If you can go forward, go forward.
@@ -129,13 +130,13 @@ class MazeSolver
     delay( FRAME_DELAY ); //slow it down enough to be followable
 
     //primary base case
-    if ( _maze[x][y] == EXIT ) {
-	     _solved = true;
+    if ( _solved ) {
+	     System.exit(0);
        return;
     }
     //other base cases
-    else if ( _maze[x][y] == WALL) {
-
+    else if ( _maze[x][y] == EXIT) {
+      _solved = true;
       return;
     }
     //otherwise, recursively solve maze from next pos over,
