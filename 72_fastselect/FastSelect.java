@@ -19,7 +19,7 @@ We want to find the yth smallest term:
 2. continue doing this until you have returned and exited
 
 
-BEST CASE SCENARIO: O(nlogn) which occurs if the partition is in the middle and the yth term is close to the middle. Since we are partitioning 
+BEST CASE SCENARIO: O(logn) which occurs if the partition is in the middle and the yth term is close to the middle. Since we are partitioning 
 from the middle, if yth is close to the middle then the time complexity is reduced.
 
 WORST CASE SCENARIO: O(n^2) which occurs if we have a partition in the middle and the yth term is an extreme value. The program will have to go through
