@@ -33,7 +33,7 @@ QCC:
 0) Did this have to be done recursively?
 */
 
-public class FastSelect{
+public class QuickSelect{
   //--------------v  HELPER METHODS  v--------------
   //swap values at indices x, y in array o
   public static void swap( int x, int y, int[] o ){
