@@ -2,7 +2,8 @@
 APCS pd 06
 HW70 -- Thinkers Of The Corn
 2022-03-07m
-time spent:
+time spent: 2.0 hrs
+
 
 Algorithm:
 0. Pick a starting position.
@@ -21,7 +22,11 @@ avoiding a deadend loop)
  is a wall and = assigns the current position as a wall
 
  * QCC
+<<<<<<< HEAD
  * out of bounds error occurs when hero goes on space
+=======
+ * out of bounds error occurs when Hero goes on border
+>>>>>>> 83ea5b9dc5d0fca7b1a5d8277ec50741a9f7923b
  ***/
 
 //enable file I/O
@@ -49,6 +54,9 @@ class MazeSolver
   {
     // init 2D array to represent maze
     // (80x25 is default terminal window size)
+
+  
+    
     _maze = new char[80][25];
     h = 0;
     w = 0;
@@ -191,11 +199,21 @@ public class Maze
 
     //drop hero into the maze (coords must be on path)
     // ThinkerTODO: comment next line out when ready to randomize startpos
-    ms.solve( 4, 3 );
+    
+    
+
+      
+  //  ms.solve( 4, 3 );
 
     //drop our hero into maze at random location on path
-    // YOUR RANDOM-POSITION-GENERATOR CODE HERE
-    //ms.solve( startX, startY );
+    int startX = (int)(Math.random()*80);
+    int startY = (int)(Math.random()*25);
+    while (ms.onPath(startX, startY) == false){
+      startX = (int)(Math.random()*80);
+      startY = (int)(Math.random()*25);
+    }
+    
+    ms.solve( startX, startY );
     /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
   }//end main()
