@@ -25,8 +25,6 @@
  DISCO:
 0) pivot =/= pivot position because the value of pivot may change while pivot position does not
 
-QCC:
-0) How does this work? TT
  **/
 
 public class QuickSort{
