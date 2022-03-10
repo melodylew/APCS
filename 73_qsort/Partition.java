@@ -50,7 +50,7 @@
  ***/
 
 
-public class Mysterion
+public class Partition
 {
   //--------------v  HELPER METHODS  v--------------
   //swap values at indices x, y in array o
