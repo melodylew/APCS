@@ -8,15 +8,15 @@
  * class QuickSort
  * Implements quicksort algo to sort an array of ints in place
  *
- * 1. Summary of QuickSort algorithm:
+ * 1. Summary of QuickSort algorithm: **needs to be refactored**
  * QSort(arr):
  * 0) Set the last index as the pvtPos.
  * 1) Using partition, we found the index where the pivot value is.
  * 2) Split the array into two sections using the index of the pivot value.
  * 3) If the array length of the smaller array is 1, does nothing because it is sorted.
  * 4) Otherwise, repeat steps 0-4.
- 
- * 2a. BEST CASE SCENARIO: O(nlogn) which occurs if the pivot position is in the middle and the array can be evenly split. Since we are partitioning 
+
+ * 2a. BEST CASE SCENARIO: O(nlogn) which occurs if the pivot position is in the middle and the array can be evenly split. Since we are partitioning
   from the middle, if yth is close to the middle then the time complexity is reduced.
  * 2b. WORST CASE SCENARIO: O(n^2) which occurs if the pivot position is an extreme value and the array is already sorted but cannot be evenly split.
 
@@ -120,6 +120,24 @@ public class QuickSort{
     qsort( arr2 );
     System.out.println("arr2 after qsort: " );
     printArr(arr2);
+
+    //best case:  O(nlogn) in which the index of the median is the pvtPos
+    int[] bestArr = {7,1,5,12,3};
+    System.out.println("\nbestArr init'd to: ");
+    printArr(bestArr);
+
+    qsort(bestArr);
+    System.out.println("bestArr after qsort: ");
+    printArr(bestArr);
+
+    //worst case: O(n^2) in which the pvtPos is the index of the min or max
+    int[] worstArr = {};
+    System.out.println("\nworstArr init'd to: ");
+    printArr(worstArr);
+
+    qsort(worstArr);
+    System.out.println("worstArr after qsort: ");
+    printArr(worstArr);
 
     // arrays of randomly generated ints
     int[] arrMatey = new int[20];

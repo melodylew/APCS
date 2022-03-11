@@ -1,0 +1,43 @@
+CoffeeBeans: Melody Lew and Xinqing Lin
+apcs pd06
+HW61 -- Instructions so Simple...
+2022-02-09w
+time spent: 2.0 hrs
+
+=========================
+Reflection & Observables
+=========================
+* Every person actively involved in the process will receive an unsorted stack
+of cards exactly once and a sorted stack of cards exactly once.
+* If a stack of cards has more than one card, it is unsorted and thus will be
+split into two stack and distributed to others unless it has been marked as
+sorted.
+* Every person has a minimal task to complete
+
+=========================
+DISCO
+=========================
+* The bigO for this algorithm is likely logarithmic since the decks are being
+split in half every time.
+
+=========================
+QCC
+=========================
+* Is this algorithm of sorting more efficient than just sorting a large pile
+all at once (by one person)?
+* How might we implement this algorithm of sorting cards into a coded algorithm
+for sorting lists?
+* Since there are 52 cards in a deck but only 34 thinkeren/turtles, wouldn't some thinkers have more than 1 card so the list isn't fully sorted?
+
+=========================
+THINKER FIRMWARE
+=========================
+Phase 1
+0: If a thinker receives an unsorted deck (height > 1), split the deck into two halves and give each to another thinker.
+1: If a thinker receives a sorted deck (height == 1), return the deck to the thinker it received the deck from.
+
+Phase 2
+2: If a thinker receives two sorted decks, place each deck with its lowest value card facing upwards.
+3: Compare the two cards facing upwards, take the one with the lower value, and place it face down on the table.
+4: Repeat until the two decks are merged into one
+5: Return this deck to the thinker you originally got cards from. 
