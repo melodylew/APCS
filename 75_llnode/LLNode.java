@@ -35,13 +35,13 @@ public class LLNode{
 
   //--------------v  MUTATORS  v--------------
   public String setCargo( String newCargo ){
-    String oldCargo = car;
+    String oldCargo = getCargo();
     car = newCargo;
     return oldCargo;
   }
 
   public LLNode setNext( LLNode newNext ){
-    LLNode oldNext = cdr;
+    LLNode oldNext = getNext();
     cdr = newNext;
     return oldNext;
   }
@@ -85,7 +85,6 @@ public class LLNode{
     while( something != null ) {
       System.out.println( something );
       something = something.getNext();
-      System.out.println(something);
     }
     //
     //
