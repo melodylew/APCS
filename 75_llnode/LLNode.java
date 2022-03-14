@@ -2,7 +2,7 @@
 // APCS pd06
 //HW75 -- Nodal Recall
 //2022-03-14m
-//time spent:
+//time spent: 0.6 hr
 
 /***
  * class LLNode
