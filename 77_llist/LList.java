@@ -1,4 +1,4 @@
-// Team: Minion (Melody Lew, Nicole Zhou, Nora Miller)
+// Team: Minions (Melody Lew, Nicole Zhou, Nora Miller)
 // APCS pd06
 // HW77 -- Insert|Remove
 // 2022-03-15
@@ -43,14 +43,15 @@ public class LList implements List //interface def must be in this dir
 
 
   //--------------v  List interface methods  v--------------
-  public boolean remove(int index){
+  public String remove(int index){
     if (_size == 0){
-      return false;
+      return "";
     }
     else if (index == 0){
+      String temp = _head.getCargo();
       _head = _head.getNext(); // we're moving the start of the array up one; the first item will get eaten by the garbage collector
       _size -= 1;
-      return true;
+      return temp;
     }
     else if (index > 0){
       // find the index before the one we want to remove
@@ -59,13 +60,14 @@ public class LList implements List //interface def must be in this dir
         pointer = pointer.getNext();
       }
       // remove it (forget it)
+      String temp = pointer.getNext().getCargo();
       pointer.setNext(pointer.getNext().getNext());
-      return true;
+      return temp;
     }
-    return false;
+    return "";
   }
 
-  public boolean addAt( int index, String newVal ){
+  public void add( int index, String newVal ){
     if (index == 0){
       add(newVal);
     } else {
@@ -77,7 +79,7 @@ public class LList implements List //interface def must be in this dir
       LLNode newItem = new LLNode( newVal, pointer.getNext()); // the item after newItem will be the one originally at index
       pointer.setNext(newItem);
     }
-    return true;
+    return;
   }
 
   public boolean add( String newVal ){ // what is the boolean for?
@@ -161,22 +163,22 @@ public class LList implements List //interface def must be in this dir
     System.out.println( "...and now 2nd item is: " + james.set(1,"got") );
     System.out.println( james );
 
-    james.addAt(4, "yo");
+    james.add(4, "yo");
     System.out.println(james);
 
-    james.remove(2);
+    System.out.println(james.remove(2));
     System.out.println(james);
 
     System.out.println("edge cases: \n");
 
-    james.addAt(0, "YO!");
+    james.add(0, "YO!");
     System.out.println(james);
 
-    james.remove(0);
+    System.out.println(james.remove(0));
     System.out.println(james);
 
     LList jill = new LList();
-    jill.remove(1);
+    System.out.println(jill.remove(1));
     System.out.println(jill);
     /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
