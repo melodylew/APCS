@@ -31,8 +31,11 @@ public class Deck {
 	 */
 	public Deck(String[] ranks, String[] suits, int[] values) {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
+		cards = new ArrayList<Card>();
 		for (String suit : suits){
 			for (int i = 0; i < ranks.length; i++){
+				// System.out.println(ranks[i]);
+				// System.out.println(values[i]);
 				cards.add(new Card(ranks[i], suit, values[i]));
 			}
 		}
@@ -77,7 +80,7 @@ public class Deck {
 			return null;
 		}
 		size--;
-		return cards[size];
+		return cards.get(size);
 	}
 
 	/**
