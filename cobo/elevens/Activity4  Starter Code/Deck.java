@@ -1,3 +1,9 @@
+// Random-Access Memory: Ryan Lau, Ameer Alnasser, Melody Lew
+// APCS pd06
+// L07: But These Go Up To Eleven
+// 2022-03-21m
+// time spent: 3.0 hrs
+
 import java.util.List;
 import java.util.ArrayList;
 
@@ -63,6 +69,17 @@ public class Deck {
 	 */
 	public void shuffle() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 4 *** */
+
+        size = cards.size(); 
+		for (int k = size - 1; k > 0; k--){
+
+			int r = (int)(Math.random() * k);
+			Card tmp = cards.get(k); //to preserve what was at values k
+			cards.set(k, cards.get(r));
+			cards.set(r, tmp);
+		}
+        
+
 	}
 
 	/**

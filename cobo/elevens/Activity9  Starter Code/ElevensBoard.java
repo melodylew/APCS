@@ -1,3 +1,9 @@
+// Random-Access Memory: Ryan Lau, Ameer Alnasser, Melody Lew
+// APCS pd06
+// L07: But These Go Up To Eleven
+// 2022-03-21m
+// time spent: 3.0 hrs
+
 import java.util.List;
 import java.util.ArrayList;
 
@@ -54,6 +60,11 @@ public class ElevensBoard extends Board {
 	@Override
 	public boolean isLegal(List<Integer> selectedCards) {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 9 *** */
+        if (selectedCards.size() == 2) {
+            return containsPairSum11(selectedCards);
+        }
+
+
 	}
 
 	/**
@@ -79,6 +90,7 @@ public class ElevensBoard extends Board {
 	 */
 	private boolean containsPairSum11(List<Integer> selectedCards) {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 9 *** */
+        return (selectedCards.get(0).pointValue() + selectedCards.get(1).pointValue() == 11);
 	}
 
 	/**
@@ -91,5 +103,14 @@ public class ElevensBoard extends Board {
 	 */
 	private boolean containsJQK(List<Integer> selectedCards) {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 9 *** */
+
+
+
+
+
+
+
+
+
 	}
 }

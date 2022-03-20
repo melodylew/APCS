@@ -1,3 +1,9 @@
+// Random-Access Memory: Ryan Lau, Ameer Alnasser, Melody Lew
+// APCS pd06
+// L07: But These Go Up To Eleven
+// 2022-03-21m
+// time spent: 3.0 hrs
+
 /**
  * Card.java
  *

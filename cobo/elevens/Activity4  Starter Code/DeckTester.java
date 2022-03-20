@@ -1,3 +1,9 @@
+// Random-Access Memory: Ryan Lau, Ameer Alnasser, Melody Lew
+// APCS pd06
+// L07: But These Go Up To Eleven
+// 2022-03-21m
+// time spent: 3.0 hrs
+
 /**
  * This is a class that tests the Deck class.
  */
@@ -52,5 +58,13 @@ public class DeckTester {
 		System.out.println();
 
 		/* *** TO BE COMPLETED IN ACTIVITY 4 *** */
+		System.out.println("**** Testing on a Standard Deck ****");
+        String[] stdRanks = {"ace", "two", "three", "four,", "five", "six", "seven", "eight", "nine", "ten", "jack", "queen", "king"};
+		String[] stdSuits = {"clubs", "spades", "diamond", "heart"};
+        int[] stdVals = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13};
+        Deck stdDeck = new Deck(stdRanks, stdSuits, stdVals);
+        System.out.println(stdDeck);
+        stdDeck.shuffle();
+        System.out.println(stdDeck);
 	}
 }
