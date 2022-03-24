@@ -15,7 +15,7 @@
 
  public interface List<T>
  {
-   //add node to list, containing input T as its data
+   //add node to list, containing input String as its data
    public boolean add( T x );
 
    //insert at specified index

@@ -22,8 +22,8 @@ ALGO ADD:
 3) Set the cdr of the node at index - 1 to the new node
 4) If we are adding a node to the end of the list, point _tail to the node being added. Then, increment the list
 ALGO REM:
-0) Check size of the linked list. If size is 0, return empty T. Otherwise, move to next step.
-1) If we are removing the node at index 0, set _head to the next node and return the removed node as a T. If not, move to next step.
+0) Check size of the linked list. If size is 0, return empty string. Otherwise, move to next step.
+1) If we are removing the node at index 0, set _head to the next node and return the removed node as a string. If not, move to next step.
 2) Move a pointer to the node before the one we want to remove.
 3) Change the cdr of current node to refer to the node ahead of the one being removed.
 4) If we are removing the last node, set _tail to the previous node. Decrement the list and return the removed node.
@@ -31,10 +31,10 @@ ALGO REM:
 
 /***
  * class LList
- * Implements a linked list of DLLNodes, each containing T data
+ * Implements a linked list of DLLNodes, each containing String data
  **/
 
-public class LList implements List<T> //interface def must be in this dir
+public class LList<T> implements List<T> //interface def must be in this dir
 {
   //instance vars
   private DLLNode _head;
@@ -161,12 +161,12 @@ public class LList implements List<T> //interface def must be in this dir
 
 
 
-  // override inherited toT
+  // override inherited toString
   public T toString(){
     // YOUR CODE HERE
     DLLNode pointer = new DLLNode("", null, null); // so that we don't modify the things we're going through
     pointer = _head;
-    T toPrint = "[ ";
+    String toPrint = "[ ";
     for (int i = 0; i < _size; i++){
       toPrint += pointer.getCargo() + " ";
       pointer = pointer.getNext();

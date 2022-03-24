@@ -19,7 +19,7 @@ public class ListTester
   {
 
     //instantiate... var type List, obj type LList
-    List<T> wu = new LList();
+    List<String> wu = new LList<String>();
 
     System.out.println(wu);
     wu.add("RZA");

@@ -55,7 +55,7 @@ public class DLLNode{
   //--------------^  MUTATORS  ^--------------
 
 
-  // override inherited toT
+  // override inherited toString
   public String toString(){
     return _cargo;
   }
