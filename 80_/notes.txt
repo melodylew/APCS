@@ -1,0 +1,15 @@
+Minions: Melody Lew, Nora Miller, Nicole Zhou
+APCS pd 06
+HW80 -- Generically Speaking
+2022-03-24
+time spent: 1.2 hrs
+
+DISCO:
+0. In our toString(), we had to typecast _cargo as a string
+1. We only needed to have <T> in place of String types.
+
+QCC:
+0. T is a placeholder
+1. What does <> indicate?
+2. When do we need to have parentheses after <>?
+3. Why did we not have to replace DLLNode with T?

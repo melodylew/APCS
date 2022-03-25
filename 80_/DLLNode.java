@@ -1,18 +1,18 @@
-// Team: Minions (Melody Lew, Nicole Zhou, Nora Miller)
-// APCS pd06
-// HW78 -- Double Up
-// 2022-03-16
-// time spent:  hr
+// Minions: Melody Lew, Nora Miller, Nicole Zhou
+// APCS pd 06
+// HW80 -- Generically Speaking
+// 2022-03-24
+// time spent: 1.2 hrs
 
 
-public class DLLNode{
+public class DLLNode<T>{
   //instance vars
-  private String _cargo;
+  private T _cargo;
   private DLLNode _nextNode;
   private DLLNode _prevNode;
 
   // constructor
-  public DLLNode( String value, DLLNode next, DLLNode prev ){
+  public DLLNode( T value, DLLNode next, DLLNode prev ){
     _cargo = value;
     _nextNode = next;
     _prevNode = prev;
@@ -20,7 +20,7 @@ public class DLLNode{
 
 
   //--------------v  ACCESSORS  v--------------
-  public String getCargo(){
+  public T getCargo(){
     return _cargo;
   }
 
@@ -35,8 +35,8 @@ public class DLLNode{
 
 
   //--------------v  MUTATORS  v--------------
-  public String setCargo( String newCargo ){
-    String foo = getCargo();
+  public T setCargo( T newCargo ){
+    T foo = getCargo();
     _cargo = newCargo;
     return foo;
   }
@@ -57,7 +57,7 @@ public class DLLNode{
 
   // override inherited toString
   public String toString(){
-    return _cargo;
+    return (String) _cargo;
   }
 
 

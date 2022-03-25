@@ -1,9 +1,8 @@
-// Minion: Melody Lew, Nora Miller, Nicole Zhou
+// Minions: Melody Lew, Nora Miller, Nicole Zhou
 // APCS pd 06
-// HW78 -- Double Up
-// 2022-03-16
-// time spent: 2.0 hrs
-// KtS consumed: 1
+// HW80 -- Generically Speaking
+// 2022-03-24
+// time spent: 1.2 hrs
 
 /***
  * class ListTester
@@ -19,7 +18,7 @@ public class ListTester
   {
 
     //instantiate... var type List, obj type LList
-    List<String> wu = new LList<String>();
+    LList<String> wu = new LList<String>();
 
     System.out.println(wu);
     wu.add("RZA");

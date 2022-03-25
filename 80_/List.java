@@ -1,8 +1,8 @@
-// Team: Minion (Melody Lew, Nicole Zhou, Nora Miller)
-// APCS pd06
-// HW76: We Got a Little Ol' Convoy
-// 2022-03-14
-// time spent: 1 hr
+// Minions: Melody Lew, Nora Miller, Nicole Zhou
+// APCS pd 06
+// HW80 -- Generically Speaking
+// 2022-03-24
+// time spent: 1.2 hrs
 
 /***
  * interface List
