@@ -1,0 +1,22 @@
+Team: Minions (Melody Lew, Nora Miller, Nicole Zhou)
+APCS
+HW82: Roll Your Own Iterator
+2022-03-26
+time spent: 1 hr
+
+DISCO:
+0)
+
+QCC:
+0) Why do we need a MyIterator nested class? Are we supposed to test it?
+1) How can we test methods in a nested class?// Minions: Melody Lew, Nora Miller, Nicole Zhou
+// APCS pd 06
+// HW82 -- Roll Your Own Iterator
+// 2022-03-28
+// time spent: 2.0 hrs
+
+DISCO:
+0. You can have the same method names in nested classes
+
+QCC:
+0. How does an iterator increase the functionality of the nodes?
