@@ -1,0 +1,17 @@
+Minions: Melody Lew, Nora Miller, Nicole Zhou
+APCS pd06
+HW85 -- Leon Leonwood Stack
+2022-03-30
+time spent: 1.5 hr
+
+
+DISCO
+0) Since both LinkedLists and ArrayLists have size() functions, and both
+can be expanded when adding something, it is no longer necessary to have 
+a separate instance variable for the number of stack items.
+1) Correspondingly, capacity needs to be an instance variable
+
+QCC
+0) We expanded capacity by multiplying the original capacity by 2.
+1) When we write a method (that does not exist in the interface) into a java file
+that implements that same interface, we cannot call that method in a tester file.
