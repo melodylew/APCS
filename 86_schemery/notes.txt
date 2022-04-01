@@ -1,0 +1,13 @@
+// Team: Minions (Melody Lew, Nora Miller, Nicole Zhou)
+// APCS pd06
+// HW86 -- What a Racket
+// 2022-03-31
+// time spent: 2.0 hrs
+
+DISCO:
+0. Integer.parseInt() is how you convert strings to ints.
+
+QCC:
+0. What is causing the initial parenthesis not to be pushed to the stack?
+1. Would our current implementation work with infix and postfix languages?
+2. What is a NoSuchElement exception?
