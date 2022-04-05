@@ -1,3 +1,10 @@
+//Minions: Melody Lew, Nora Miller, Nicole Zhou
+//APCS pd06
+//HW88 -- BPC Kiddies Do Not Wait in Line Either
+//2022-04-04
+//time spent:
+
+
 /***
  * class RQueue
  * SKELETON
@@ -15,10 +22,10 @@
  **/
 
 
-public class RQueue<SWASHBUCKLE> implements Queue<SWASHBUCKLE>
+public class RQueue<T> implements Queue<T>
 {
   //instance variables
-  private LLNode<SWASHBUCKLE> _front, _end;
+  private LLNode<T> _front, _end;
   private int _size;
 
 
@@ -26,20 +33,20 @@ public class RQueue<SWASHBUCKLE> implements Queue<SWASHBUCKLE>
   public RQueue()
   {
     _front = _end = null;
+    _size = 0;
   }
 
 
   public void enqueue( T enQVal )
   {
-    LLNode<QUASAR> newVal = new LLNode(x, null);
-    if (_back == null){
-      _back = newVal;
-      _front = newVal;
+    if ( isEmpty() ) {
+      _front = _end = new LLNode<T>( enQVal, null );
     }
-    else{
-      _back.setNext(newVal);
-    _back = _back.getNext();
+    else {
+      _end.setNext( new LLNode<T>( enQVal, null ) );
+      _end = _end.getNext();
     }
+    _size++;
 
   }//O(1)
 
@@ -48,40 +55,75 @@ public class RQueue<SWASHBUCKLE> implements Queue<SWASHBUCKLE>
   // assume _queue ! empty
   public T dequeue()
   {
+    int index = (int)(Math.random() * _size); // gives you a random index
+    System.out.println(index);
+    //T retVal = _front.getCargo();
 
-  }//O(?)
+    // LLNode<T> retNode = _front;
+    // for (int i = 0; i < index; i++) { //traverse through the list until you reach the random index
+    //   retNode = retNode.getNext();
+    // }
+    // return retNode.getCargo();
+
+    LLNode<T> temp = _front;
+    T retVal;
+    if (index == 0){
+      retVal = _front.getCargo();
+      _front = _front.getNext(); // forgets the first node
+    }
+    else{
+      for (int i = 0; i < index; i++){
+        temp = temp.getNext();
+      }
+      retVal = temp.getCargo();
+      temp.setNext(temp.getNext().getNext());
+    }
+    if (_front == null){
+      _end = null;
+    }
+    _size--;
+    return retVal;
+  }//O(n)
 
 
   public T peekFront()
   {
-    return _front.getValue();
-  }//O(?)
+    return _front.getCargo();
+  }//O(1)
 
 
   /***
    * void sample() -- a means of "shuffling" the queue
    * Algo:
-   *   < YOUR SUCCINCT SUMMARY HERE >
+   *   1. Dequeue a random element
+       2. Requeue it (-> it is at the beginning)
+       3. Do this as many times as there are elements
    **/
   public void sample ()
   {
-    
-  }//O(?)
+    //LLNode<T> temp = _front;
+    for (int i = 0; i < _size; i++){
+      T shuffling = dequeue();
+      enqueue(shuffling);
+      //_front = temp;
+    }
+
+  }//O(n^2)
 
 
   public boolean isEmpty()
   {
     return _front == null;
-  } //O(?)
+  } //O(1)
 
 
   // print each node, separated by spaces
   public String toString()
   {
     String foo = "";
-    LLNode<SWASHBUCKLE> tmp = _front;
+    LLNode<T> tmp = _front;
     while ( tmp != null ) {
-      foo += tmp.getValue() + " ";
+      foo += tmp.getCargo() + " ";
       tmp = tmp.getNext();
     }
     return foo;
@@ -93,7 +135,6 @@ public class RQueue<SWASHBUCKLE> implements Queue<SWASHBUCKLE>
   public static void main( String[] args )
   {
 
-    /*v~~~~~~~~~~~~~~MAKE MORE~~~~~~~~~~~~~~v
 
     Queue<String> PirateQueue = new RQueue<String>();
 
@@ -116,6 +157,7 @@ public class RQueue<SWASHBUCKLE> implements Queue<SWASHBUCKLE>
     System.out.println( PirateQueue.dequeue() );
     System.out.println( PirateQueue.dequeue() );
 
+    /*v~~~~~~~~~~~~~~MAKE MORE~~~~~~~~~~~~~~v
     System.out.println("\nnow dequeuing fr empty queue...\n" +
                        "(expect NPE)\n");
     System.out.println( PirateQueue.dequeue() );
