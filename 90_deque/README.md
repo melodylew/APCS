@@ -1,6 +1,6 @@
 # team Minions
 *\~Melody Lew\~*\
-*\~Nora Miller\~*
+*\~Nora Miller\~*\
 *\~Nicole Zhou\~*
 
 
