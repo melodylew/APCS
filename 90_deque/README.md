@@ -1,3 +1,9 @@
+# team Minions
+*\~Melody Lew\~*\
+*\~Nora Miller\~*
+*\~Nicole Zhou\~*
+
+
 TO DO:
 
 0. add methods 
