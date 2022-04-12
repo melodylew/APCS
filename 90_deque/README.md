@@ -7,15 +7,15 @@
 TO DO:
 
 0. add methods
-   a. addFirst()
-   b. addLast()
+   * addFirst()
+   * addLast()
    
 1. remove methods
-   a. removeFirst()
-   b. removeLast()
+   * removeFirst()
+   * removeLast()
    
 2. peek methods
-   a. peekFirst()
-   b. peekLast()
+   * peekFirst()
+   * peekLast()
    
 3. size()
