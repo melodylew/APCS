@@ -7,10 +7,10 @@
 
 import java.util.LinkedList;
 
-public class YourImplementationOfDeque<Card> implements Deque<Card>{
+public class DequeOfMinions<Card> implements Deque<Card>{
   private LinkedList<Card> _contents;
 
-  public YourImplementationOfDeque(){
+  public DequeOfMinions(){
     _contents = new LinkedList<Card>();
   }
 
