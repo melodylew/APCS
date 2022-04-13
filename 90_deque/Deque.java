@@ -10,13 +10,13 @@ public interface Deque<Card>{
   // add an element to the end of the queue
   public void addLast(Card x);
   // removes and returns the first element of the queue
-  // public Card removeFirst();
-  // // removes and returns the last element of the queue
-  // public Card removeLast();
-  // // returns the first element of the queue
-  // public Card peekFirst();
-  // // returns the last element of the queue
-  // public Card peekLast();
+  public Card removeFirst();
+  // removes and returns the last element of the queue
+  public Card removeLast();
+  // returns the first element of the queue
+  public Card peekFirst();
+  // returns the last element of the queue
+  public Card peekLast();
 
-  // public int size();
+  public int size();
 }
