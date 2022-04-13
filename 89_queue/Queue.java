@@ -1,3 +1,25 @@
+<<<<<<< HEAD
+=======
+// Team: Minions (Melody Lew, Nora Miller, Nicole Zhou)
+// APCS pd06
+// HW89: Queue Two Ways
+// 2022-04-11
+// time spent: 0.7 hr
+
+/*
+DISCO:
+0) Pass through is basically when a inner class method has the same functionality
+as the wrapper class method, and we could then use the method from the wrapper class
+into the inner class method.
+1) Linked lists are very versatile! At least compared to other collections we've learned about
+2) If we do not set a value to the instance variable, we could get a NullPointerException error.
+
+QCC:
+0) Is there such a thing as a data type where you can remove/pop items from either end,
+but you can only insert on one end?
+*/
+
+>>>>>>> 0c08dfbdddbd8cd23c2a68c672b4c2ba9a6b2e0f
 /***
  * interface Queue
  * Includes only methods listed in AP subset of Java

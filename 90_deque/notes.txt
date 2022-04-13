@@ -1,0 +1,19 @@
+Minions: Melody Lew, Nora Miller, Nicole Zhou
+APCS pd06
+HW90 -- Swabbing the Deque
+2022-04-12
+time spent: 0.6 hrs
+
+
+DISCO:
+0) We had to import LinkedList because deque is a node class.
+1) Some methods are for capacity-restricted deques (but we did not implement them)
+2) (ERROR: non-static type variable Card cannot be referenced
+from a static context) -> Specify type in main method
+3) If we have a method in the interface that is not used in the implementing class,
+then we would get an error.
+
+QCC:
+0) Do we need instance variables declared in Deque interface? No ?
+1) We had size() as a method instead of an instance variable because we are
+following Oracle.
