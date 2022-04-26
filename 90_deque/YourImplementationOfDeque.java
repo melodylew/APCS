@@ -51,7 +51,7 @@ public class DequeOfMinions<Card> implements Deque<Card>{
   // }
 
   public static void main(String[] args) {
-    Deque<String> sentence = new YourImplementationOfDeque<String>();
+    Deque<String> sentence = new DequeOfMinions<String>();
 
     sentence.addLast("I");
     sentence.addLast("saw");
