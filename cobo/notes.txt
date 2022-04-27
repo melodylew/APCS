@@ -1,0 +1,43 @@
+JIMIN: Ryan Lau, Melody Lew, Paul Serbanescu
+APCS pd06
+L09: Some Folks Call It A Charades
+2022-04-27
+time spent: 5 hours
+
+DISCO:
+0. You can pass an object into ArrayList.remove() and it will that object from
+the ArrayList if it's present.
+1. Even though you create frame components, you must explicitly add them to the
+frame (took a while to figure out)
+2. Separating your game logic from your GUI makes it much more straightforward
+to focus on issues/errors with either one at a time. This is especially
+important because the Java swing set is hard to work with.
+
+QCC:
+0. How can we fix/reset the timer?
+
+
+ACTIVITY 2
+
+1. The purpose of a constructor is to instantiate instance variables.
+2. It will always start with public followed by the class name. It can also take parameters.
+3. String clue and String answer
+4. Getters and setters for the clue and answer instance variables
+7. An additional constructor could be:
+
+public Celebrity() {
+
+}
+
+The difference is that the answer and clue instance variables will have to be set later with the setters methods.
+
+
+
+ACTIVITY 3
+
+1. The JComponent class' appearance can be modified with setForeground(), setBackground().
+JComponents can be added to Layouts which can be added to JFrames.
+2. private ArrayList<Celebrity> _celebGameList;
+3. private
+12. CelebrityGame
+13. Nothing

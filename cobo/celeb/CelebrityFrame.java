@@ -1,3 +1,10 @@
+// JIMIN: Ryan Lau, Melody Lew, Paul Serbanescu
+// APCS pd06
+// L09: Some Folks Call It A Charades
+// 2022-04-27
+// time spent: 5 hours
+
+
 import java.awt.CardLayout;
 
 import javax.swing.JFrame;
@@ -35,15 +42,14 @@ public class CelebrityFrame extends JFrame
 
 	/**
 	 * Builds an instance of the CelebFrame with a reference to the CelebrityGame instance.
-	 * @param controller A reference to a CelebrityGame to share with the CelebPanel instance.
+	 * @param controller a reference to a celebritygame to share with the celebpanel instance.
 	 */
 	public CelebrityFrame(CelebrityGame controllerRef)
 	{
 		//The first line of any subclass should ALWAYS be a correct call to the super constructor.
 		super();
-		gamePanel = new CelebrityPanel(controllerRef);
-		startPanel = new StartPanel(controllerRef);
-		setupFrame();
+        controller = controllerRef;
+        setupFrame();
 	}
 
 	/**
@@ -51,8 +57,12 @@ public class CelebrityFrame extends JFrame
 	 */
 	private void setupFrame()
 	{
-		setSize(500,500);
-		setVisible(true);
+        startPanel = new StartPanel(controller);
+        gamePanel = new CelebrityPanel(controller);
+        setContentPane(startPanel);
+        setSize(500, 500);
+        // pack();
+        setVisible(true);
 	}
 
 	/**
@@ -61,10 +71,12 @@ public class CelebrityFrame extends JFrame
 	 */
 	public void replaceScreen(String screen)
 	{
-		if (screen.equals("START")){
-			this.setContentPane(startPanel);
-		}
-
+        if (screen.equals("START")) {
+            setContentPane(startPanel);
+        } else if (screen.equals("GAME")) {
+            gamePanel.addClue(controller.sendClue());
+            setContentPane(gamePanel);
+        }
 	}
 
 }

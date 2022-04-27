@@ -1,3 +1,9 @@
+// JIMIN: Ryan Lau, Melody Lew, Paul Serbanescu
+// APCS pd06
+// L09: Some Folks Call It A Charades
+// 2022-04-27
+// time spent: 5 hours
+
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -47,6 +53,7 @@ public class StartPanel extends JPanel
   /**
    * Customize the JRadioButton for the class created sub class
    */
+    private JRadioButton yourRadioButtonName;
 
   /**
    * Label to guide the user to what should be inputted.
@@ -165,7 +172,6 @@ public class StartPanel extends JPanel
     if (answerText.length() > 4)
     {
       validAnswer = controller.validateCelebrity(answerText);
-      // setVisible(this.answerField);
     }
 
     return (validClue && validAnswer);
@@ -178,8 +184,16 @@ public class StartPanel extends JPanel
   private void setupPanel()
   {
     // Adds the RadioButtons to the group so only one can be selected.
-    this.setupLayout(panelLayout);
-    this.add(answerField);
+      setLayout(panelLayout);
+      this.add(celebrityRadio);
+      this.add(literatureRadio);
+      this.add(clueLabel);
+      this.add(celebrityCountLabel);
+      this.add(answerField);
+      this.add(clueField);
+      this.add(addCelebrityButton);
+      this.add(startButton);
+
   }
 
   /**
