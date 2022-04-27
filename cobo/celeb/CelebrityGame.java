@@ -27,6 +27,8 @@ public class CelebrityGame
 	{
 		_celebGameList = new ArrayList<Celebrity>();
 		_gameWindow = new CelebrityFrame(this);
+		_gameWindow.setVisible(true);
+		prepareGame();
 	}
 
 	/**
@@ -48,7 +50,7 @@ public class CelebrityGame
 	 */
 	public boolean processGuess(String guess)
 	{
-		return false;
+		return (guess.toLowerCase().strip().equals(_gameCelebrity.getAnswer().toLowerCase().strip()));
 	}
 
 	/**
@@ -63,7 +65,7 @@ public class CelebrityGame
 
 	/**
 	 * Adds a Celebrity of specified type to the game list
-	 * 
+	 *
 	 * @param name
 	 *            The name of the celebrity
 	 * @param guess
@@ -83,7 +85,7 @@ public class CelebrityGame
 	 */
 	public boolean validateCelebrity(String name)
 	{
-		return false;
+		return (name.length() >= 4);
 	}
 
 	/**
