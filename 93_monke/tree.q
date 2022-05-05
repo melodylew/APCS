@@ -2,7 +2,7 @@ JIMIN :: Ryan Lau, Melody Lew, Paul Serbanescu
 APCS pd0
 HW93 -- exploring tree properties, extracting actionable intel from traversals
 2022-05-05r
-time spent:  hrs
+time spent: 1.0  hrs
 
 
 DISCO
@@ -13,7 +13,7 @@ DISCO
 
 QCC
 ------------------------------------------------
-* 
+* What do you mean by "Is the Man Who Is Tall Happy?"
 ================================================
 
 
@@ -23,7 +23,7 @@ In which direction does a tree grow?
 Down
 
 Provide as many alternate definitions as you can for "tree," using graph terminology ("closed/open tours", "paths", "cycles", etc). Maximize clarity, succinctness.
-
+A tree is an open tour, in which there are n(n-1)/2 paths to take away from the tree (n is number of nodes). There are no cycles in a tree.
 
 Why is a balanced tree allowed a difference of 1 in height between right and left subtrees?
 A balanced tree is a binary tree that can have a difference of no more than one in height between the right and left subtrees.
@@ -47,6 +47,17 @@ Every single level is completely filled (no exceptions!)
 
 C'EST POSSIBLE?
 ------------------------------------------------
-< your explanation of whether the tree reconstruction challenge given in class is achievable or not >
+It is achievable. 
+        E
+         \
+          G
+         /
+        D 
+       / \
+      K   I 
+         / \
+        N   L 
+           / \
+          O   W
 ================================================
 
