@@ -1,0 +1,56 @@
+JIMIN :: Ryan Lau, Melody Lew, Paul Serbanescu
+APCS pd6
+HW94 -- Reforestation
+2022-05-06f
+time spent:  hrs
+
+
+DISCO
+------------------------------------------------
+* 
+================================================
+
+
+QCC
+------------------------------------------------
+* Can we have two of the same letters in a tree?
+================================================
+
+
+HOW KEEN ARE YOUR POWERS OF OBSERVATION?
+------------------------------------------------
+Q: For a given binary tree, how many unique pre-order traversals are there?
+A: 1
+
+Q: For a given binary tree, how many unique in-order traversals are there?
+A: 1
+
+Q: For a given binary tree, how many unique post-order traversals are there?
+A: 1
+
+Q: For a given traversal, how many unique trees could have produced it?
+A: Depends on the given traversal
+
+Q: Given a pre-order traversal, what can you infer about its tree?
+A: The first letter is the root
+
+Q: Given a post-order traversal, what can you infer about its tree?
+A: The last letter is the root
+
+Q: What does "1-to-1" mean?
+A: 
+
+Q: What does "onto" mean?
+A: 
+
+================================================
+
+
+ALGO for Reconstructing Binary Tree Given Preorder and In-Order Traversal 
+------------------------------------------------
+givens: preorder traversal and inorder traversal
+
+procedure:
+0. 
+================================================
+(replicate the algo section above as many times as necessary for distinct algos)
