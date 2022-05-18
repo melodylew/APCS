@@ -1,3 +1,10 @@
+// JIMIN :: Ryan Lau, Melody Lew, Paul Serbanescu
+// APCS pd6
+// HW101 -- Heap o'Trouble
+// 2022-05-16m
+// time spent: 0.5 hrs
+
+
 DISCO: 
 0. Heap uses: https://piazza.com/class/kue5pmk0w7n70n?cid=879
    O(1) lookup time for the smallest/largest elements, useful when you want to always remove the smallest/largest item of a dataset
