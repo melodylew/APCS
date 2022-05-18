@@ -1,3 +1,10 @@
+// JIMIN :: Ryan Lau, Melody Lew, Paul Serbanescu
+// APCS pd6
+// HW101 -- Heap o'Trouble
+// 2022-05-16m
+// time spent: 0.5 hrs
+
+
 CASE 1: The element being added is greater than all the existing nodes
 
 0. set element as leaf
