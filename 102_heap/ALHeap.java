@@ -1,3 +1,10 @@
+// JIMIN :: Ryan Lau, Melody Lew, Paul Serbanescu
+// APCS pd6
+// HW102 -- Heap On Heapin' On
+// 2022-05-17t
+// time spent: 0.7 hrs
+
+
 /**
  * class ALHeap
  * SKELETON
